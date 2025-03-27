@@ -1,0 +1,8 @@
+tasks:
+  - init: echo 'Welcome to your GitPod workspace!'
+    command: echo 'Your development environment is ready!'
+
+vscode:
+  extensions:
+    - github.vscode-pull-request-github
+    - gitpod.gitpod-desktop
