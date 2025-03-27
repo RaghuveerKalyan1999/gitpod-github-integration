@@ -1,8 +1,35 @@
-tasks:
-  - init: echo 'Welcome to your GitPod workspace!'
-    command: echo 'Your development environment is ready!'
+# Image to use
+image: gitpod/workspace-full
 
+# List of tasks to run on workspace start
+tasks:
+  - name: Setup
+    init: |
+      echo 'Installing dependencies...'
+      # Add your build/install commands here
+    command: |
+      echo 'Development environment ready!'
+      # Add your startup commands here
+
+# VS Code extensions to install
 vscode:
   extensions:
     - github.vscode-pull-request-github
     - gitpod.gitpod-desktop
+    - ms-python.python
+    - dbaeumer.vscode-eslint
+
+# Ports to expose
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 8080
+    onOpen: ignore
+
+# GitHub integration
+github:
+  prebuilds:
+    # enable for pull requests
+    pullRequests: true
+    # enable for push to main/default branch
+    branches: true
